@@ -1,5 +1,6 @@
 package com.bookkeeping.bookkeepingapi.model;
 
+import com.bookkeeping.bookkeepingapi.web.vm.UserVM;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,5 +30,11 @@ public class User implements Serializable {
         @Column
         Integer age;//年龄
 
+        public User(UserVM userVM){
+                this.username = userVM.getUsername();
+                this.password = userVM.getPassword();
+                this.name = userVM.getUsername();
+                this.age = userVM.getAge();
+        }
 
 }
